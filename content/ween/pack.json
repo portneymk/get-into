@@ -1,0 +1,42 @@
+{
+  "slug": "ween",
+  "displayName": "Ween",
+  "tagline": "A tiny stub pack — enough albums to prove you can duplicate the template.",
+  "intro": "This is **not** a finished Ween map. It exists so a new band is a folder, not a rewrite of the app. Copy `content/ween`, rename the slug, and replace these three placeholders.\n\nWhen someone writes the real Ween pack, start at *GodWeenSatan* or *Chocolate and Cheese* and fan out toward *The Mollusk*.",
+  "startAlbums": [
+    {
+      "slug": "godweensatan",
+      "label": "GodWeenSatan: The Oneness",
+      "hint": "The noisy first door. Replace this stub when the real pack lands.",
+      "featured": true
+    }
+  ],
+  "lanes": [
+    {
+      "id": "brown",
+      "label": "Brown",
+      "blurb": "The early, feral, four-track Ween."
+    },
+    {
+      "id": "nautical",
+      "label": "Nautical",
+      "blurb": "The Mollusk's sea-shanty psych — a taste lane waiting for more edges."
+    }
+  ],
+  "theme": {
+    "bg": "#1c100c",
+    "bgRaised": "#2a1812",
+    "fg": "#f3e4c8",
+    "muted": "#c4a888",
+    "accent": "#e0a317",
+    "accentFg": "#1b1208",
+    "accent2": "#7a3fa0",
+    "ink": "#0c0705",
+    "border": "#3d2a1c",
+    "card": "#23140f",
+    "glow": "#7a3fa0",
+    "radius": "20px",
+    "pattern": "carnival"
+  },
+  "footerBlurb": "Stub pack on purpose. Duplicate this folder to add a real Ween (or any other) catalog in about fifteen minutes."
+}

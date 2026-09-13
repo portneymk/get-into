@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-pack-bg: var(--bg);
+  --color-pack-raised: var(--bg-raised);
+  --color-pack-fg: var(--fg);
+  --color-pack-muted: var(--muted);
+  --color-pack-accent: var(--accent);
+  --color-pack-accent-fg: var(--accent-fg);
+  --color-pack-accent-2: var(--accent-2);
+  --color-pack-ink: var(--ink);
+  --color-pack-border: var(--border);
+  --color-pack-card: var(--card);
+  --color-pack-glow: var(--glow);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  --bg: #101210;
+  --bg-raised: #171a17;
+  --fg: #ece6d6;
+  --muted: #a7aa9c;
+  --accent: #d4a017;
+  --accent-fg: #1c1608;
+  --accent-2: #4c8f73;
+  --ink: #080a08;
+  --border: #2b332c;
+  --card: #141814;
+  --glow: #2f6b4f;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.pack-shell {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.pack-shell::before,
+.pack-shell::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.pattern-swamp::before {
+  background:
+    radial-gradient(1200px 700px at 10% -10%, color-mix(in oklab, var(--glow) 28%, transparent), transparent 55%),
+    radial-gradient(900px 600px at 110% 0%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 50%),
+    radial-gradient(700px 500px at 50% 120%, color-mix(in oklab, var(--accent-2) 18%, transparent), transparent 55%),
+    var(--bg);
+}
+
+.pattern-swamp::after {
+  opacity: 0.18;
+  background-image:
+    radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--accent-2) 55%, transparent) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 60%, color-mix(in oklab, var(--accent) 40%, transparent) 0 1.5px, transparent 3px),
+    repeating-linear-gradient(
+      115deg,
+      transparent 0 18px,
+      color-mix(in oklab, var(--fg) 6%, transparent) 18px 19px
+    );
+}
+
+.pattern-carnival::before {
+  background:
+    radial-gradient(900px 600px at 0% 0%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 50%),
+    radial-gradient(800px 500px at 100% 10%, color-mix(in oklab, var(--accent-2) 24%, transparent), transparent 52%),
+    var(--bg);
+}
+
+.pattern-carnival::after {
+  opacity: 0.16;
+  background-image:
+    repeating-conic-gradient(from 15deg at 110% -10%, transparent 0 12deg, color-mix(in oklab, var(--accent) 18%, transparent) 12deg 13deg),
+    repeating-linear-gradient(
+      -20deg,
+      transparent 0 14px,
+      color-mix(in oklab, var(--fg) 7%, transparent) 14px 15px
+    );
+}
+
+.pattern-plain::before {
+  background:
+    radial-gradient(800px 500px at 50% -10%, color-mix(in oklab, var(--glow) 16%, transparent), transparent 60%),
+    var(--bg);
+}
+
+.display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.prose-pack {
+  color: color-mix(in oklab, var(--fg) 92%, var(--muted));
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.prose-pack p + p,
+.prose-pack ul + p,
+.prose-pack p + ul,
+.prose-pack blockquote + p {
+  margin-top: 1rem;
+}
+
+.prose-pack a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-pack strong {
+  color: var(--fg);
+}
+
+.prose-pack blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.prose-pack ul {
+  padding-left: 1.2rem;
+}
+
+.prose-pack li + li {
+  margin-top: 0.35rem;
+}
+
+.prose-pack code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.92em;
+  background: color-mix(in oklab, var(--card) 80%, black);
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
