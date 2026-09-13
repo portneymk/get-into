@@ -2,7 +2,7 @@
 title: "Live Frogs Set 2"
 slug: "live-frogs-set-2"
 year: 2001
-project: "Colonel Les Claypool's Fearless Flying Frog Brigade"
+project: "Les Claypool's Frog Brigade"
 type: "live"
 tags:
   - frogs

@@ -2,7 +2,7 @@
 title: "Purple Onion"
 slug: "purple-onion"
 year: 2002
-project: "The Les Claypool Frog Brigade"
+project: "Les Claypool's Frog Brigade"
 type: "album"
 tags:
   - frogs
