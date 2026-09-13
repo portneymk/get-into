@@ -2,6 +2,8 @@
 
 Reusable **Get Into [Artist]** flowchart guides. Pick a door, hop by taste.
 
+Live: [https://portneymk.github.io/get-into/](https://portneymk.github.io/get-into/) (GitHub Pages, static export).
+
 Inspired by [Get Into Gizz](https://www.getintogizz.com) / [gloyens/gizz-next-remake](https://github.com/gloyens/gizz-next-remake). Not affiliated, and this repo does not copy their code, assets, or blurbs.
 
 ## Packs
@@ -30,9 +32,24 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
-npm run build   # must pass
+npm run build   # static export → out/  (must pass)
+GITHUB_PAGES=true npm run build   # same export with basePath /get-into
 npm run new-pack -- slugs-band "Slugs Band"
 ```
+
+Local `npm run dev` is `/`. The Pages build is `/get-into/` so it matches `https://portneymk.github.io/get-into/`.
+
+### GitHub Pages (one-time switch)
+
+The site is `output: "export"`. A workflow (`.github/workflows/pages.yml`) builds with `GITHUB_PAGES=true` and deploys `out/` via `actions/deploy-pages`.
+
+Repo Pages is still a **legacy branch build** until someone flips it:
+
+1. Repo **Settings → Pages**
+2. **Build and deployment → Source: GitHub Actions**
+3. Merge to `main` (or run the **GitHub Pages** workflow)
+
+`public/.nojekyll` keeps Pages from hiding `/_next`. For a custom domain later, set `NEXT_PUBLIC_BASE_PATH=` (empty) in the workflow so `basePath` drops.
 
 ## Routes
 
@@ -128,4 +145,4 @@ Cover art is not hosted. Listen links send people to Spotify / YouTube / Apple /
 
 ## Stack
 
-Next.js App Router, TypeScript, Tailwind v4. Content is read from disk at build time via `gray-matter`.
+Next.js App Router, TypeScript, Tailwind v4. Content is read from disk at build time via `gray-matter`. `output: "export"` ships a static `out/` for GitHub Pages.

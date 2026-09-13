@@ -1,15 +1,17 @@
-import { redirect } from "next/navigation";
-import { getPack, pickRandomAlbum } from "@/lib/content";
+import { notFound } from "next/navigation";
+import { RandomRedirect } from "@/components/RandomRedirect";
+import { getAllPacks, getPack } from "@/lib/content";
 
-export const dynamic = "force-dynamic";
+type Params = { pack: string };
 
-export default async function RandomAlbumPage({
-  params,
-}: {
-  params: Promise<{ pack: string }>;
-}) {
+export function generateStaticParams() {
+  return getAllPacks().map((pack) => ({ pack: pack.slug }));
+}
+
+export default async function RandomAlbumPage({ params }: { params: Promise<Params> }) {
   const { pack: slug } = await params;
   const pack = getPack(slug);
-  if (!pack) redirect("/packs");
-  redirect(`/${pack.slug}/${pickRandomAlbum(pack).slug}`);
+  if (!pack) notFound();
+
+  return <RandomRedirect packSlug={pack.slug} slugs={pack.albums.map((album) => album.slug)} />;
 }
