@@ -1,0 +1,67 @@
+{
+  "slug": "claypool",
+  "displayName": "Claypool",
+  "tagline": "Primus is the front door. The rest of the house is frogs, oysters, whales, and a Lennon.",
+  "intro": "Les Claypool has spent four decades making bass the lead vocal — first with **Primus**, then through a swamp of side projects that share DNA without repeating the joke. This map treats the whole universe as one catalog: start at *Seas of Cheese* (or the rawer *Frizzle Fry*), then hop by taste instead of chronology.\n\nCovers are placeholder marks. Use the listen links and go play the actual records.",
+  "startAlbums": [
+    {
+      "slug": "sailing-the-seas-of-cheese",
+      "label": "Sailing the Seas of Cheese",
+      "hint": "The usual door: Jerry, Tommy, and the cartoon-metal breakthrough.",
+      "featured": true
+    },
+    {
+      "slug": "frizzle-fry",
+      "label": "Frizzle Fry",
+      "hint": "The alt door: dirtier, earlier, still fully formed."
+    }
+  ],
+  "lanes": [
+    {
+      "id": "funk-metal",
+      "label": "Funk-metal",
+      "blurb": "Slap, grit, and cartoon menace — the Primus lane most people came for."
+    },
+    {
+      "id": "swamp-psych",
+      "label": "Swamp-psych",
+      "blurb": "Holy Mackerel and the solo records: Rancho Relaxo diaries, less thrash, more mud."
+    },
+    {
+      "id": "frogs",
+      "label": "Frogs",
+      "blurb": "The Fearless Flying Frog Brigade — jam-band Claypool with Whamola and cover-band courage."
+    },
+    {
+      "id": "delirium-prog",
+      "label": "Delirium prog",
+      "blurb": "Sean Lennon plus Claypool: space-station psych, concept records, sacred-cow covers."
+    },
+    {
+      "id": "experimental",
+      "label": "Experimental",
+      "blurb": "C2B3, guest-heavy Primus, leftover soundtracks — the rooms without a chorus."
+    },
+    {
+      "id": "twang",
+      "label": "Twang",
+      "blurb": "Duo de Twang: overalls, covers, and the same songs with the distortion peeled off."
+    }
+  ],
+  "theme": {
+    "bg": "#0b1210",
+    "bgRaised": "#14201a",
+    "fg": "#e8dcc4",
+    "muted": "#9aaa94",
+    "accent": "#d4a017",
+    "accentFg": "#1a1408",
+    "accent2": "#3f8f6e",
+    "ink": "#070a08",
+    "border": "#2a3d30",
+    "card": "#101a15",
+    "glow": "#2f6b4f",
+    "radius": "18px",
+    "pattern": "swamp"
+  },
+  "footerBlurb": "Unofficial Claypool-universe field guide covering Primus and the side quests. Not affiliated with Primus, Prawn Song, or ATO."
+}
