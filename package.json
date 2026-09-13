@@ -6,8 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
+    "preview": "npx --yes serve out",
     "lint": "eslint",
-    "new-pack": "tsx scripts/new-pack.ts"
+    "new-pack": "tsx scripts/new-pack.ts",
+    "generate-why-next": "tsx scripts/generate-why-next.ts"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

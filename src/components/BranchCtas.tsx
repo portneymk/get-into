@@ -7,7 +7,7 @@ export function BranchCtas({
   branches,
 }: {
   packSlug: string;
-  branches: { edge: AlbumEdge; album: AlbumData }[];
+  branches: { edge: AlbumEdge; album: AlbumData; why: string }[];
 }) {
   if (branches.length === 0) return null;
 
@@ -18,7 +18,7 @@ export function BranchCtas({
       </p>
       <h2 className="display mt-2 text-3xl text-pack-fg">Where next?</h2>
       <div className="mt-6 grid gap-4">
-        {branches.map(({ edge, album }) => (
+        {branches.map(({ edge, album, why }) => (
           <Link
             key={edge.slug}
             href={`/${packSlug}/${album.slug}`}
@@ -37,10 +37,9 @@ export function BranchCtas({
               </span>
             </div>
             <p className="display mt-3 text-2xl text-pack-fg group-hover:text-pack-accent">{edge.label}</p>
-            <p className="mt-1 text-sm text-pack-muted">
-              {album.title}
-              {edge.hint ? ` — ${edge.hint}` : ""}
-            </p>
+            <p className="mt-1 text-sm text-pack-muted">{album.title}</p>
+            <p className="mono mt-3 text-[10px] tracking-[0.18em] text-pack-accent-2 uppercase">Why this next</p>
+            <p className="mt-1 text-sm leading-relaxed text-pack-fg/90">{why}</p>
           </Link>
         ))}
       </div>

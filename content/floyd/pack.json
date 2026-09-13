@@ -1,0 +1,87 @@
+{
+  "slug": "floyd",
+  "displayName": "Floyd",
+  "tagline": "Piper if you want the beginning. Dark Side if you want the door everyone actually uses.",
+  "intro": "**Pink Floyd** does not need another essay about the prism. This is a curated studio spine: early psych, the classic four, then the later Gilmour records. No live sets, no *Relics* homework.\n\nStart at *The Dark Side of the Moon*. Or *Piper* if you came for Barrett.",
+  "startAlbums": [
+    {
+      "slug": "dark-side-of-the-moon",
+      "label": "The Dark Side of the Moon",
+      "hint": "The usual door. You already know. Play it anyway.",
+      "featured": true
+    },
+    {
+      "slug": "piper-at-the-gates-of-dawn",
+      "label": "The Piper at the Gates of Dawn",
+      "hint": "The alt door: Barrett, 1967, before the clocks."
+    }
+  ],
+  "tasteDoor": {
+    "prompt": "Which Floyd?",
+    "chips": [
+      {
+        "id": "classic",
+        "label": "Classic",
+        "slug": "dark-side-of-the-moon",
+        "blurb": "The prism."
+      },
+      {
+        "id": "spacey",
+        "label": "Spacey",
+        "slug": "wish-you-were-here",
+        "blurb": "Shine On, then the absence."
+      },
+      {
+        "id": "political",
+        "label": "Pigs",
+        "slug": "animals",
+        "blurb": "Dogs, Pigs, Sheep."
+      },
+      {
+        "id": "opera",
+        "label": "The Wall",
+        "slug": "the-wall",
+        "blurb": "Brick by brick."
+      },
+      {
+        "id": "early",
+        "label": "Early psych",
+        "slug": "piper-at-the-gates-of-dawn",
+        "blurb": "Barrett's house."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "classic",
+      "label": "Classic four",
+      "blurb": "Dark Side → Wish → Animals → The Wall."
+    },
+    {
+      "id": "early",
+      "label": "Early",
+      "blurb": "Piper and Meddle — before the brand hardened."
+    },
+    {
+      "id": "later",
+      "label": "Later",
+      "blurb": "Division Bell and Endless River — Gilmour's weather."
+    }
+  ],
+  "theme": {
+    "bg": "#0a0a12",
+    "bgRaised": "#141428",
+    "fg": "#efe6d6",
+    "muted": "#9a96aa",
+    "accent": "#d94b8a",
+    "accentFg": "#1a0810",
+    "accent2": "#3d8fd9",
+    "ink": "#06060c",
+    "border": "#2a2a44",
+    "card": "#10101c",
+    "glow": "#d94b8a",
+    "radius": "16px",
+    "pattern": "plain"
+  },
+  "footerBlurb": "Unofficial Pink Floyd listening map. Not affiliated with Pink Floyd Ltd or the estates."
+}

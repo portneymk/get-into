@@ -16,6 +16,41 @@
       "hint": "The alt door: dirtier, earlier, still fully formed."
     }
   ],
+  "tasteDoor": {
+    "prompt": "What's the itch?",
+    "chips": [
+      {
+        "id": "heavier",
+        "label": "Heavier",
+        "slug": "pork-soda",
+        "blurb": "Thicker riffs, meaner jokes."
+      },
+      {
+        "id": "swampier",
+        "label": "Swampier",
+        "slug": "highball-with-the-devil",
+        "blurb": "Leave the trio. More mud."
+      },
+      {
+        "id": "psych",
+        "label": "Psych",
+        "slug": "monolith-of-phobos",
+        "blurb": "Sean Lennon, space-station colors."
+      },
+      {
+        "id": "funk",
+        "label": "Funk",
+        "slug": "sailing-the-seas-of-cheese",
+        "blurb": "Slap first. Questions later."
+      },
+      {
+        "id": "weird-bass",
+        "label": "Weird bass",
+        "slug": "of-whales-and-woe",
+        "blurb": "The four-string is the lead vocal."
+      }
+    ]
+  },
   "lanes": [
     {
       "id": "funk-metal",

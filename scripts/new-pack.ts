@@ -33,6 +33,13 @@ const pack = {
       featured: true,
     },
   ],
+  tasteDoor: {
+    prompt: "What's the itch?",
+    chips: [
+      { id: "core", label: "The core sound", slug: startSlug, blurb: "Stay close to the famous thing." },
+      { id: "left-turn", label: "The left turn", slug: nextSlug, blurb: "Weirder room, still in the graph." },
+    ],
+  },
   lanes: [
     {
       id: "core",
@@ -80,6 +87,9 @@ nextAlbums:
     label: If you want the next step
     hint: Replace this placeholder edge.
     vibe: core
+    why: Clerk-tone, 1–2 sentences. Why this hop, not a review.
+whyNext:
+  ${nextSlug}: Same idea as edge.why — either place works. Static text, no API key.
 ---
 
 Rewrite this blurb. Tell a first-timer what this record *does*, not just what year it came out.

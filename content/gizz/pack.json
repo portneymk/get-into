@@ -1,0 +1,97 @@
+{
+  "slug": "gizz",
+  "displayName": "Gizz",
+  "tagline": "Pick a color, not a year. They already made the next one.",
+  "intro": "**King Gizzard & the Lizard Wizard** treat genres like rental cars. This map is a curated studio spine — psych, microtonal, thrash, jazz, folk — not every jam and not a clone of anyone else's flowchart.\n\nStart at *I'm in Your Mind Fuzz* or jump to *Nonagon Infinity*. Then hop by itch.",
+  "startAlbums": [
+    {
+      "slug": "im-in-your-mind-fuzz",
+      "label": "I'm in Your Mind Fuzz",
+      "hint": "The usual door: locked grooves, garage psych, the riff that eats itself.",
+      "featured": true
+    },
+    {
+      "slug": "nonagon-infinity",
+      "label": "Nonagon Infinity",
+      "hint": "The alt door: one loop, no gaps, more teeth."
+    }
+  ],
+  "tasteDoor": {
+    "prompt": "Which color first?",
+    "chips": [
+      {
+        "id": "psych",
+        "label": "Psych",
+        "slug": "im-in-your-mind-fuzz",
+        "blurb": "Garage loops, fried."
+      },
+      {
+        "id": "microtonal",
+        "label": "Microtonal",
+        "slug": "flying-microtonal-banana",
+        "blurb": "Notes between the notes."
+      },
+      {
+        "id": "thrash",
+        "label": "Thrash",
+        "slug": "infest-the-rats-nest",
+        "blurb": "Leather, speed, collapse."
+      },
+      {
+        "id": "jazz",
+        "label": "Jazz",
+        "slug": "sketches-of-brunswick-east",
+        "blurb": "Soft chairs, still weird."
+      },
+      {
+        "id": "folk",
+        "label": "Folk",
+        "slug": "paper-mache-dream-balloon",
+        "blurb": "Acoustic, still a prank."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "psych",
+      "label": "Psych",
+      "blurb": "Mind Fuzz through the jam records — loops and heat."
+    },
+    {
+      "id": "microtonal",
+      "label": "Microtonal",
+      "blurb": "Banana, K.G., the silver synth cousin."
+    },
+    {
+      "id": "thrash",
+      "label": "Thrash",
+      "blurb": "Rats' Nest to Petro. Fast, loud, finite."
+    },
+    {
+      "id": "jazz",
+      "label": "Jazz / jam",
+      "blurb": "Sketches, Ice Death, the long chairs."
+    },
+    {
+      "id": "folk",
+      "label": "Folk",
+      "blurb": "Paper Mâché and the later campfire records."
+    }
+  ],
+  "theme": {
+    "bg": "#120c14",
+    "bgRaised": "#1c1420",
+    "fg": "#f2e6c8",
+    "muted": "#b8a88c",
+    "accent": "#e85d2a",
+    "accentFg": "#1a0c08",
+    "accent2": "#3cb48a",
+    "ink": "#0a070c",
+    "border": "#3a2a3c",
+    "card": "#18101c",
+    "glow": "#e85d2a",
+    "radius": "20px",
+    "pattern": "carnival"
+  },
+  "footerBlurb": "Unofficial King Gizzard listening map. Original copy. Not affiliated with the band, Flightless, or KGLW."
+}
