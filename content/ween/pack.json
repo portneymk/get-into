@@ -1,26 +1,71 @@
 {
   "slug": "ween",
   "displayName": "Ween",
-  "tagline": "A tiny stub pack — enough albums to prove you can duplicate the template.",
-  "intro": "This is **not** a finished Ween map. It exists so a new band is a folder, not a rewrite of the app. Copy `content/ween`, rename the slug, and replace these three placeholders.\n\nWhen someone writes the real Ween pack, start at *GodWeenSatan* or *Chocolate and Cheese* and fan out toward *The Mollusk*.",
+  "tagline": "Brown first, or the sea. Either way, don't start with the joke about the joke.",
+  "intro": "**Ween** is a taste map, not a discography exam. This pack upgrades the old three-album stub into a starter catalog: the brown records, the singles record, the nautical one, Quebec, and a couple of left turns.\n\nStart at *Chocolate and Cheese* unless you already like four-track cruelty.",
   "startAlbums": [
     {
-      "slug": "godweensatan",
-      "label": "GodWeenSatan: The Oneness",
-      "hint": "The noisy first door. Replace this stub when the real pack lands.",
+      "slug": "chocolate-and-cheese",
+      "label": "Chocolate and Cheese",
+      "hint": "The usual door: actual songs, still brown around the edges.",
       "featured": true
+    },
+    {
+      "slug": "godweensatan",
+      "label": "GodWeenSatan",
+      "hint": "The alt door: feral, long, four-track."
     }
   ],
+  "tasteDoor": {
+    "prompt": "How brown?",
+    "chips": [
+      {
+        "id": "brown",
+        "label": "Brown",
+        "slug": "godweensatan",
+        "blurb": "Four-track, feral."
+      },
+      {
+        "id": "hooks",
+        "label": "Hooks",
+        "slug": "chocolate-and-cheese",
+        "blurb": "Voodoo Lady lives here."
+      },
+      {
+        "id": "nautical",
+        "label": "Nautical",
+        "slug": "the-mollusk",
+        "blurb": "Sea-shanty psych."
+      },
+      {
+        "id": "dark",
+        "label": "Darker",
+        "slug": "quebec",
+        "blurb": "Pretty, then it isn't."
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "slug": "12-golden-country-greats",
+        "blurb": "Ten songs, Nashville."
+      }
+    ]
+  },
   "lanes": [
     {
       "id": "brown",
       "label": "Brown",
-      "blurb": "The early, feral, four-track Ween."
+      "blurb": "GodWeenSatan, The Pod, Pure Guava — the early cruelty."
     },
     {
       "id": "nautical",
       "label": "Nautical",
-      "blurb": "The Mollusk's sea-shanty psych — a taste lane waiting for more edges."
+      "blurb": "The Mollusk and the records that borrowed its weather."
+    },
+    {
+      "id": "polished",
+      "label": "Polished",
+      "blurb": "Chocolate and Cheese into White Pepper."
     }
   ],
   "theme": {
@@ -38,5 +83,5 @@
     "radius": "20px",
     "pattern": "carnival"
   },
-  "footerBlurb": "Stub pack on purpose. Duplicate this folder to add a real Ween (or any other) catalog in about fifteen minutes."
+  "footerBlurb": "Unofficial Ween starter map. Not affiliated with the band or Chocodog."
 }

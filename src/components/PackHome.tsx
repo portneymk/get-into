@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RandomLink } from "@/components/RandomLink";
 import { StartDoors } from "@/components/StartDoors";
+import { TasteDoor } from "@/components/TasteDoor";
 import { renderMarkdown } from "@/lib/markdown";
 import type { Pack } from "@/lib/types";
 
@@ -20,6 +21,8 @@ export function PackHome({ pack }: { pack: Pack }) {
       <div className="mt-10">
         <StartDoors pack={pack} albumsBySlug={albumsBySlug} />
       </div>
+
+      <TasteDoor pack={pack} albumsBySlug={albumsBySlug} />
 
       {pack.lanes && pack.lanes.length > 0 ? (
         <section className="mt-12">

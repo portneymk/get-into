@@ -7,6 +7,7 @@ export type AlbumEdge = {
   label: string;
   hint?: string;
   vibe?: string;
+  why?: string;
 };
 
 export type AlbumData = {
@@ -18,6 +19,7 @@ export type AlbumData = {
   tags: string[];
   listenUrls: ListenUrls;
   nextAlbums: AlbumEdge[];
+  whyNext?: Record<string, string>;
   body: string;
 };
 
@@ -32,6 +34,18 @@ export type TasteLane = {
   id: string;
   label: string;
   blurb: string;
+};
+
+export type TasteChip = {
+  id: string;
+  label: string;
+  slug: string;
+  blurb?: string;
+};
+
+export type TasteDoor = {
+  prompt?: string;
+  chips: TasteChip[];
 };
 
 export type PackPattern = "swamp" | "carnival" | "plain";
@@ -59,6 +73,8 @@ export type PackMeta = {
   intro: string;
   startAlbums: StartDoor[];
   lanes?: TasteLane[];
+  tasteDoor?: TasteDoor;
+  whyNext?: Record<string, Record<string, string>>;
   theme: PackTheme;
   footerBlurb: string;
 };

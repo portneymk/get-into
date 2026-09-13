@@ -4,7 +4,8 @@ import path from "node:path";
 import matter from "gray-matter";
 import { cache } from "react";
 import { CONTENT_DIR, RESERVED_ALBUM_SLUGS, getSiteConfig } from "@/lib/config";
-import type { AlbumData, AlbumEdge, AlbumType, Pack, PackMeta, PackTheme } from "@/lib/types";
+import { resolveWhyNext } from "@/lib/why-next";
+import type { AlbumData, AlbumEdge, AlbumType, Pack, PackMeta, PackTheme, TasteChip, TasteDoor } from "@/lib/types";
 
 export { albumTypeLabel, groupAlbumsByProject } from "@/lib/albums";
 
@@ -54,8 +55,46 @@ function parseEdges(value: unknown, albumSlug: string): AlbumEdge[] {
       label: record.label,
       hint: typeof record.hint === "string" ? record.hint : undefined,
       vibe: typeof record.vibe === "string" ? record.vibe : undefined,
+      why: typeof record.why === "string" ? record.why : undefined,
     };
   });
+}
+
+function parseWhyNextMap(value: unknown, label: string): Record<string, string> | undefined {
+  if (value === undefined) return undefined;
+  assert(value && typeof value === "object" && !Array.isArray(value), `${label} whyNext must be a map of slug → reason`);
+  const out: Record<string, string> = {};
+  for (const [slug, reason] of Object.entries(value as Record<string, unknown>)) {
+    if (typeof reason === "string" && reason.trim()) out[slug] = reason.trim();
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
+}
+
+function parseTasteDoor(value: unknown, packSlug: string): TasteDoor | undefined {
+  if (value === undefined) return undefined;
+  assert(value && typeof value === "object", `Pack "${packSlug}" tasteDoor is invalid`);
+  const record = value as Record<string, unknown>;
+  const rawChips = Array.isArray(record.chips) ? record.chips : Array.isArray(value) ? (value as unknown[]) : null;
+  assert(rawChips, `Pack "${packSlug}" tasteDoor needs chips[]`);
+
+  const chips: TasteChip[] = rawChips.map((chip, index) => {
+    assert(chip && typeof chip === "object", `Pack "${packSlug}" tasteDoor.chips[${index}] is invalid`);
+    const item = chip as Record<string, unknown>;
+    assert(typeof item.id === "string" && item.id, `Pack "${packSlug}" tasteDoor.chips[${index}] needs an id`);
+    assert(typeof item.label === "string" && item.label, `Pack "${packSlug}" tasteDoor.chips[${index}] needs a label`);
+    assert(typeof item.slug === "string" && item.slug, `Pack "${packSlug}" tasteDoor.chips[${index}] needs a slug`);
+    return {
+      id: item.id,
+      label: item.label,
+      slug: item.slug,
+      blurb: typeof item.blurb === "string" ? item.blurb : undefined,
+    };
+  });
+
+  return {
+    prompt: typeof record.prompt === "string" ? record.prompt : undefined,
+    chips,
+  };
 }
 
 function parseAlbumRecord(data: Record<string, unknown>, body: string, filePath: string): AlbumData {
@@ -86,6 +125,7 @@ function parseAlbumRecord(data: Record<string, unknown>, body: string, filePath:
     tags,
     listenUrls,
     nextAlbums: parseEdges(data.nextAlbums, slug),
+    whyNext: parseWhyNextMap(data.whyNext, `Album "${slug}"`),
     body: body.trim(),
   };
 }
@@ -125,8 +165,21 @@ function loadPackFromDir(dirName: string): Pack {
   const slugs = new Set(albums.map((album) => album.slug));
   assert(slugs.size === albums.length, `Pack "${dirName}" has duplicate album slugs`);
 
+  const whyNextPath = path.join(packDir, "why-next.json");
+  const packWhys = fs.existsSync(whyNextPath)
+    ? readJson<Record<string, Record<string, string>>>(whyNextPath)
+    : meta.whyNext;
+
+  const tasteDoor = parseTasteDoor(meta.tasteDoor, dirName);
+
   for (const door of meta.startAlbums) {
     assert(slugs.has(door.slug), `Pack "${dirName}" start album "${door.slug}" does not exist`);
+  }
+
+  if (tasteDoor) {
+    for (const chip of tasteDoor.chips) {
+      assert(slugs.has(chip.slug), `Pack "${dirName}" taste door "${chip.id}" points at missing album "${chip.slug}"`);
+    }
   }
 
   for (const album of albums) {
@@ -136,10 +189,17 @@ function loadPackFromDir(dirName: string): Pack {
         `Pack "${dirName}" album "${album.slug}" points at missing album "${edge.slug}"`,
       );
     }
+    if (album.whyNext) {
+      for (const target of Object.keys(album.whyNext)) {
+        assert(slugs.has(target), `Pack "${dirName}" album "${album.slug}" whyNext points at missing album "${target}"`);
+      }
+    }
   }
 
   return {
     ...meta,
+    tasteDoor,
+    whyNext: packWhys,
     theme: parseTheme(meta.theme, dirName),
     albums: albums.sort((a, b) => a.year - b.year || a.title.localeCompare(b.title)),
   };
@@ -170,13 +230,21 @@ export function getAlbum(packSlug: string, albumSlug: string): AlbumData | undef
   return getPack(packSlug)?.albums.find((album) => album.slug === albumSlug);
 }
 
-export function resolveEdges(pack: Pack, album: AlbumData): { edge: AlbumEdge; album: AlbumData }[] {
+export function resolveEdges(
+  pack: Pack,
+  album: AlbumData,
+): { edge: AlbumEdge; album: AlbumData; why: string }[] {
   return album.nextAlbums
     .map((edge) => {
       const target = pack.albums.find((item) => item.slug === edge.slug);
-      return target ? { edge, album: target } : null;
+      if (!target) return null;
+      return {
+        edge,
+        album: target,
+        why: resolveWhyNext(album, edge, target, pack.whyNext),
+      };
     })
-    .filter((item): item is { edge: AlbumEdge; album: AlbumData } => item !== null);
+    .filter((item): item is { edge: AlbumEdge; album: AlbumData; why: string } => item !== null);
 }
 
 export function pickRandomAlbum(pack: Pack, exceptSlug?: string): AlbumData {

@@ -1,0 +1,87 @@
+{
+  "slug": "stones",
+  "displayName": "Stones",
+  "tagline": "A curated studio spine. Not every live album, not every 80s shrug.",
+  "intro": "The **Rolling Stones** catalog is a junk drawer with a few perfect rooms. This pack is the essentials: mid-60s snap, the '68–'72 run, *Some Girls*, *Tattoo You*, and a late handshake.\n\nStart at *Exile*. Or *Beggars Banquet* if you want the run-up.",
+  "startAlbums": [
+    {
+      "slug": "exile-on-main-st",
+      "label": "Exile on Main St.",
+      "hint": "The usual door: dirty, long, the one the clerks agree on.",
+      "featured": true
+    },
+    {
+      "slug": "beggars-banquet",
+      "label": "Beggars Banquet",
+      "hint": "The alt door: Street Fighting Man, the '68 reset."
+    }
+  ],
+  "tasteDoor": {
+    "prompt": "Which Stones?",
+    "chips": [
+      {
+        "id": "dirty",
+        "label": "Dirty",
+        "slug": "exile-on-main-st",
+        "blurb": "Basement, 1972."
+      },
+      {
+        "id": "swagger",
+        "label": "Swagger",
+        "slug": "sticky-fingers",
+        "blurb": "Zipper, riffs."
+      },
+      {
+        "id": "sixties",
+        "label": "Sixties",
+        "slug": "aftermath",
+        "blurb": "Paint It Black era."
+      },
+      {
+        "id": "nyc",
+        "label": "New York",
+        "slug": "some-girls",
+        "blurb": "Disco, 1978."
+      },
+      {
+        "id": "late",
+        "label": "Late",
+        "slug": "hackney-diamonds",
+        "blurb": "2023 handshake."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "classic",
+      "label": "The run",
+      "blurb": "Beggars → Bleed → Sticky → Exile."
+    },
+    {
+      "id": "sixties",
+      "label": "Sixties",
+      "blurb": "Aftermath before they invent the later band."
+    },
+    {
+      "id": "later",
+      "label": "Later",
+      "blurb": "Some Girls, Tattoo You, Hackney."
+    }
+  ],
+  "theme": {
+    "bg": "#12080a",
+    "bgRaised": "#1e0e12",
+    "fg": "#f3e4d4",
+    "muted": "#c4a090",
+    "accent": "#e23b3b",
+    "accentFg": "#1a0808",
+    "accent2": "#e8c36a",
+    "ink": "#0a0406",
+    "border": "#3d1c20",
+    "card": "#180a0e",
+    "glow": "#e23b3b",
+    "radius": "16px",
+    "pattern": "carnival"
+  },
+  "footerBlurb": "Unofficial Rolling Stones essentials map. Not affiliated with the band or ABKCO / Universal."
+}

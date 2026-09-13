@@ -1,0 +1,87 @@
+{
+  "slug": "doors",
+  "displayName": "The Doors",
+  "tagline": "Six studio albums. Morrison on all of them. That's the whole map.",
+  "intro": "**The Doors** only made six studio records with Jim Morrison. This pack is that spine — no *Other Voices*, no endless comps.\n\nStart at the debut. Or *L.A. Woman* if you want the last ride first.",
+  "startAlbums": [
+    {
+      "slug": "the-doors",
+      "label": "The Doors",
+      "hint": "The usual door: Light My Fire, the organ, 1967.",
+      "featured": true
+    },
+    {
+      "slug": "la-woman",
+      "label": "L.A. Woman",
+      "hint": "The alt door: last studio, bluesier, still him."
+    }
+  ],
+  "tasteDoor": {
+    "prompt": "Which room?",
+    "chips": [
+      {
+        "id": "hits",
+        "label": "The hits",
+        "slug": "the-doors",
+        "blurb": "1967, the door."
+      },
+      {
+        "id": "darker",
+        "label": "Darker",
+        "slug": "strange-days",
+        "blurb": "Same year, less sun."
+      },
+      {
+        "id": "blues",
+        "label": "Blues",
+        "slug": "morrison-hotel",
+        "blurb": "Roadhouse, 1970."
+      },
+      {
+        "id": "last",
+        "label": "Last ride",
+        "slug": "la-woman",
+        "blurb": "Riders, then out."
+      },
+      {
+        "id": "orchestral",
+        "label": "Orchestral",
+        "slug": "the-soft-parade",
+        "blurb": "The odd one."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "early",
+      "label": "1967",
+      "blurb": "The Doors and Strange Days — the first year."
+    },
+    {
+      "id": "middle",
+      "label": "Middle",
+      "blurb": "Waiting and Soft Parade — hits and horns."
+    },
+    {
+      "id": "late",
+      "label": "Late",
+      "blurb": "Morrison Hotel and L.A. Woman — the blues exit."
+    }
+  ],
+  "theme": {
+    "bg": "#100c0a",
+    "bgRaised": "#1c1410",
+    "fg": "#f0e2c8",
+    "muted": "#b49a7a",
+    "accent": "#c9a227",
+    "accentFg": "#1a1206",
+    "accent2": "#8b2c2c",
+    "ink": "#0a0706",
+    "border": "#3a2c20",
+    "card": "#16110d",
+    "glow": "#8b2c2c",
+    "radius": "14px",
+    "pattern": "plain"
+  },
+  "footerBlurb": "Unofficial Doors studio map. Not affiliated with the band or the estate."
+}

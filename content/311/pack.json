@@ -1,0 +1,87 @@
+{
+  "slug": "311",
+  "displayName": "311",
+  "tagline": "Reggae-rock, rap-rock, and a surprisingly long second act.",
+  "intro": "**311** is one of those bands people pretend they outgrew and then quietly put *Amber* on again. This is a core studio spine: the early punch, the blue album, *Transistor*, and a few later records that still hop.\n\nStart at the self-titled. Or *Grassroots* if you want it rawer.",
+  "startAlbums": [
+    {
+      "slug": "blue-album",
+      "label": "311 (Blue)",
+      "hint": "The usual door: Down, All Mixed Up, the one in every car.",
+      "featured": true
+    },
+    {
+      "slug": "grassroots",
+      "label": "Grassroots",
+      "hint": "The alt door: dirtier, still the same two voices."
+    }
+  ],
+  "tasteDoor": {
+    "prompt": "Which 311?",
+    "chips": [
+      {
+        "id": "reggae-rock",
+        "label": "Reggae-rock",
+        "slug": "blue-album",
+        "blurb": "The radio one."
+      },
+      {
+        "id": "rap-rock",
+        "label": "Rap-rock",
+        "slug": "music",
+        "blurb": "Earlier, punchier."
+      },
+      {
+        "id": "spacey",
+        "label": "Spacey",
+        "slug": "transistor",
+        "blurb": "Long, weird, 1997."
+      },
+      {
+        "id": "later",
+        "label": "Later",
+        "slug": "mosaic",
+        "blurb": "They kept going."
+      },
+      {
+        "id": "raw",
+        "label": "Rawer",
+        "slug": "grassroots",
+        "blurb": "Pre-blue grit."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "reggae-rock",
+      "label": "Reggae-rock",
+      "blurb": "Blue album through From Chaos — the handshake."
+    },
+    {
+      "id": "rap-rock",
+      "label": "Rap-rock",
+      "blurb": "Music and Grassroots, before the gloss."
+    },
+    {
+      "id": "later",
+      "label": "Later",
+      "blurb": "Mosaic, Voyager — the band that refused to retire the logo."
+    }
+  ],
+  "theme": {
+    "bg": "#07141a",
+    "bgRaised": "#0e1f28",
+    "fg": "#e7f4ee",
+    "muted": "#8fb4a8",
+    "accent": "#3ecf8e",
+    "accentFg": "#062016",
+    "accent2": "#f0c44c",
+    "ink": "#041016",
+    "border": "#1d3a40",
+    "card": "#0b1a20",
+    "glow": "#3ecf8e",
+    "radius": "18px",
+    "pattern": "swamp"
+  },
+  "footerBlurb": "Unofficial 311 listening map. Not affiliated with the band or Volcano."
+}
